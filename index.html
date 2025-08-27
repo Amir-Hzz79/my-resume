@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirhossein Zamani - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+
+    <div class="background-shapes">
+    </div>
+
+    <div class="action-buttons fixed top-4 right-4 z-50 flex gap-2" dir="ltr">
+        <button id="language-switcher" class="action-button" aria-label="Toggle Language"
+            title="Toggle Language"></button>
+        <button id="theme-switcher" class="action-button" aria-label="Toggle theme" title="Toggle Theme">
+            <i class="fas fa-sun text-lg"></i>
+        </button>
+    </div>
+
+    <div id="resume-content" class="container mx-auto max-w-7xl p-4 sm:p-6 lg:p-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <aside class="lg:col-span-1 lg:sticky top-8 space-y-8 h-full">
+                <div id="sidebar-card" class="resume-card p-8 rounded-xl">
+                </div>
+            </aside>
+
+            <main class="lg:col-span-3 space-y-12">
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            "en": {
+                "title": "Amirhossein Zamani - Resume",
+                "sidebar": {
+                    "personalInfo": { "name": "Amirhossein Zamani", "title": "Software Developer", "imageUrl": "me.jpg" },
+                    "sections": { "contact": "Contact", "skills": "Skills", "education": "Education", "languages": "Languages" },
+                    "contact": { "email": "amirhosseinzamani454@gmail.com", "phone": "+98 9391827599", "location": "Isfahan, Iran", "linkedin": "https://www.linkedin.com/in/amir-hosein-zamani-110938243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "githubUrl": "https://github.com/Amir-Hzz79", "telegram": "https://t.me/Amir_Hzz79" },
+                    "skills": [
+                        { "category": "Backend & Database", "technologies": ["C#", "ASP.NET Core", "REST API", "Entity Framework", "MS SQL Server"] },
+                        { "category": "Mobile & Frontend", "technologies": ["Flutter", "Blazor", "HTML/CSS/Bootstrap"] },
+                        { "category": "Game Development", "technologies": ["Unity", "C++", "C#"] },
+                        { "category": "Tools & Other", "technologies": ["Git", "Windows Forms"] }
+                    ],
+                    "education": { "degree": "BS in Computer Engineering", "university": "University of Isfahan", "years": "2019 – 2023" },
+                    "languages": [{ "name": "Persian", "proficiency": "Native" }, { "name": "English", "proficiency": "Professional" }]
+                },
+                "main": {
+                    "sections": { "summary": "Summary", "experience": "Work Experience", "projects": "Projects", "courses": "Courses" },
+                    "summary": "A dedicated and versatile software developer with experience in mobile development using Flutter and backend services with ASP.NET Core. Passionate about building clean, efficient applications and contributing to innovative projects in a collaborative team environment.",
+                    "experience": [
+                        { "title": "Freelance Developer", "company": "Remote", "period": "April 2024 – Present", "description": ["Developing applications using .NET and Flutter for various clients."], "tags": [".NET", "Flutter"] },
+                        { "title": "Software Developer", "company": "Barnamenevisan Pasargad Co.", "period": "November 2022 – Present", "description": [], "tags": [".NET", "ASP.NET Core", "C#", "Flutter"] },
+                        { "title": "Game Developer (Unity)", "company": "Entertainment Industry Innovation Center, University of Isfahan", "period": "May 2022 – October 2022", "description": ["Developed games using the Unity engine.", "Contributed to the implementation of online game infrastructure with ASP.NET Core and RESTful APIs."], "tags": ["Unity", "C#", "ASP.NET Core"] }
+                    ],
+                    "projects": [
+                        { "name": "Planza - Goal & Task Manager", "description": "Android app for managing long-term goals, daily tasks, and habits.", "tags": ["Flutter"], "url": "https://github.com/Amir-Hzz79/planza", "urlText": "View on GitHub", "icon": "fab fa-github" },
+                        { "name": "Hampa Plus Companion App", "description": "A mobile banking-style application for microfinance funds.", "tags": ["Flutter"], "url": "https://cafebazaar.ir/app/bnpco.ir.HampaPlus", "urlText": "View on CafeBazaar", "icon": "fas fa-external-link-alt" },
+                        { "name": "Nearby Places Finder", "description": "Simple Flutter app using Foursquare API to find nearby locations.", "tags": ["Flutter"], "url": "https://github.com/Amir-Hzz79/nearby_finder", "urlText": "View on GitHub", "icon": "fab fa-github" },
+                        { "name": "Flutter Chess Game", "description": "A complete chess game implemented using Flutter.", "tags": ["Flutter"], "url": "https://github.com/Amir-Hzz79/flutter-chess-game", "urlText": "View on GitHub", "icon": "fab fa-github" },
+                        { "name": "Online Room Reservation App", "description": "Web application for booking rooms online.", "tags": ["ASP.NET Core", "Blazor"], "url": "https://panel.zaersarafatemiye.ir/", "urlText": "View Live", "icon": "fas fa-external-link-alt" }
+                    ],
+                    "courses": ["Flutter Course - Udemy (Maximilian)", "ASP.NET MVC Course - Toplearn", "ASP.NET Core Course - Toplearn", "Game Development with Unity - University of Isfahan"]
+                }
+            },
+            "fa": {
+                "title": "امیرحسین زمانی - رزومه",
+                "sidebar": {
+                    "personalInfo": { "name": "امیرحسین زمانی", "title": "توسعه‌دهنده نرم‌افزار", "imageUrl": "me.jpg" },
+                    "sections": { "contact": "اطلاعات تماس", "skills": "مهارت‌ها", "education": "تحصیلات", "languages": "زبان‌ها" },
+                    "contact": { "email": "amirhosseinzamani454@gmail.com", "phone": "۰۹۳۹۱۸۲۷۵۹۹", "location": "اصفهان، ایران", "linkedin": "https://www.linkedin.com/in/amir-hosein-zamani-110938243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "githubUrl": "https://github.com/Amir-Hzz79", "telegram": "https://t.me/Amir_Hzz79" },
+                    "skills": [
+                        { "category": "بک‌اند و پایگاه داده", "technologies": ["C#", "ASP.NET Core", "REST API", "Entity Framework", "MS SQL Server"] },
+                        { "category": "موبایل و فرانت‌اند", "technologies": ["Flutter", "Blazor", "HTML/CSS/Bootstrap"] },
+                        { "category": "توسعه بازی", "technologies": ["Unity", "C++", "C#"] },
+                        { "category": "ابزارها و سایر", "technologies": ["Git", "Windows Forms"] }
+                    ],
+                    "education": { "degree": "کارشناسی مهندسی کامپیوتر", "university": "دانشگاه اصفهان", "years": "۱۳۹۸ – ۱۴۰۲" },
+                    "languages": [{ "name": "فارسی", "proficiency": "زبان مادری" }, { "name": "انگلیسی", "proficiency": "حرفه‌ای" }]
+                },
+                "main": {
+                    "sections": { "summary": "خلاصه", "experience": "سوابق شغلی", "projects": "پروژه‌ها", "courses": "دوره‌های آموزشی" },
+                    "summary": "توسعه‌دهنده نرم‌افزار متعهد و همه‌کاره با تجربه در توسعه اپلیکیشن‌های موبایل با فلاتر و سرویس‌های بک‌اند با ASP.NET Core. علاقه‌مند به ساخت برنامه‌های تمیز و کارآمد و مشارکت در پروژه‌های نوآورانه در یک محیط تیمی.",
+                    "experience": [
+                        { "title": "توسعه‌دهنده فریلنسر", "company": "دورکاری", "period": "فروردین ۱۴۰۳ – تاکنون", "description": ["توسعه اپلیکیشن‌ها با استفاده از .NET و فلاتر برای مشتریان مختلف."], "tags": [".NET", "Flutter"] },
+                        { "title": "توسعه‌دهنده نرم‌افزار", "company": "شرکت برنامه‌نویسان پاسارگاد", "period": "آبان ۱۴۰۱ – تاکنون", "description": [], "tags": [".NET", "ASP.NET Core", "C#", "Flutter"] },
+                        { "title": "توسعه‌دهنده بازی (یونیتی)", "company": "مرکز نوآوری صنعت سرگرمی، دانشگاه اصفهان", "period": "اردیبهشت ۱۴۰۱ – مهر ۱۴۰۱", "description": ["توسعه بازی‌ها با استفاده از موتور یونیتی.", "مشارکت در پیاده‌سازی زیرساخت بازی آنلاین با ASP.NET Core و RESTful API."], "tags": ["Unity", "C#", "ASP.NET Core"] }
+                    ],
+                    "projects": [
+                        { "name": "پلنزا - مدیر اهداف و وظایف", "description": "اپلیکیشن اندروید برای مدیریت اهداف بلندمدت، وظایف روزانه و عادت‌ها.", "tags": ["Flutter"], "url": "https://github.com/Amir-Hzz79/planza", "urlText": "مشاهده در گیت‌هاب", "icon": "fab fa-github" },
+                        { "name": "اپلیکیشن همراه همپا پلاس", "description": "یک اپلیکیشن موبایل به سبک بانکداری برای صندوق‌های قرض‌الحسنه.", "tags": ["Flutter"], "url": "https://cafebazaar.ir/app/bnpco.ir.HampaPlus", "urlText": "مشاهده در کافه‌بازار", "icon": "fas fa-external-link-alt" },
+                        { "name": "یابنده مکان‌های نزدیک", "description": "اپلیکیشن ساده فلاتر با استفاده از Foursquare API برای یافتن مکان‌های نزدیک.", "tags": ["Flutter"], "url": "https://github.com/Amir-Hzz79/nearby_finder", "urlText": "مشاهده در گیت‌هاب", "icon": "fab fa-github" },
+                        { "name": "بازی شطرنج با فلاتر", "description": "یک بازی کامل شطرنج که با استفاده از فلاتر پیاده‌سازی شده است.", "tags": ["Flutter"], "url": "https://github.com/Amir-Hzz79/flutter-chess-game", "urlText": "مشاهده در گیت‌هاب", "icon": "fab fa-github" },
+                        { "name": "اپلیکیشن رزرو آنلاین اتاق", "description": "اپلیکیشن وب برای رزرو آنلاین اتاق.", "tags": ["ASP.NET Core", "Blazor"], "url": "https://panel.zaersarafatemiye.ir/", "urlText": "مشاهده آنلاین", "icon": "fas fa-external-link-alt" }
+                    ],
+                    "courses": ["دوره فلاتر - یودمی (ماکسیمیلیان)", "دوره ASP.NET MVC - تاپ‌لرن", "دوره ASP.NET Core - تاپ‌لرن", "دوره توسعه بازی با یونیتی - دانشگاه اصفهان"]
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const languageSwitcher = document.getElementById('language-switcher');
+            const html = document.documentElement;
+
+            const themeIcon = themeSwitcher.querySelector('i');
+            const setTheme = (theme) => {
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    html.classList.remove('dark');
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('theme', 'light');
+                }
+            };
+            themeSwitcher.addEventListener('click', () => {
+                const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+            const getInitialLang = () => {
+                const savedLang = localStorage.getItem('language');
+                if (savedLang) return savedLang;
+                const browserLang = navigator.language.split('-')[0];
+                return browserLang === 'fa' ? 'fa' : 'en';
+            };
+            let currentLang = getInitialLang();
+            languageSwitcher.addEventListener('click', () => {
+                currentLang = (currentLang === 'en') ? 'fa' : 'en';
+                localStorage.setItem('language', currentLang);
+                updatePageLanguage(currentLang);
+            });
+            const updatePageLanguage = (lang) => {
+                html.lang = lang;
+                html.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+                languageSwitcher.innerHTML = (lang === 'fa') ? '<span class="font-bold text-sm">FA</span>' : '<span class="font-bold text-sm">EN</span>';
+                document.title = translations[lang].title;
+                renderResume(lang);
+            };
+            updatePageLanguage(currentLang);
+
+            const backgroundContainer = document.querySelector('.background-shapes');
+            const allSkills = translations.en.sidebar.skills.flatMap(category => category.technologies);
+            const skillIcons = {
+                'Flutter': 'fab fa-flutter', 'Android': 'fab fa-android', 'Unity': 'fab fa-unity',
+                'Git': 'fab fa-git-alt', 'HTML/CSS': 'fab fa-html5', 'MS SQL Server': 'fas fa-database',
+                'ASP.NET Core': 'fas fa-server', 'REST API': 'fas fa-network-wired', 'Game Development': 'fas fa-gamepad'
+            };
+            let currentSkillIndex = 0;
+
+            function createShapes() {
+                backgroundContainer.innerHTML = '';
+                for (let i = 0; i < 9; i++) {
+                    const skill = allSkills[(currentSkillIndex + i) % allSkills.length];
+                    const element = document.createElement(skillIcons[skill] ? 'i' : 'span');
+
+                    if (skillIcons[skill]) {
+                        element.className = `shape ${skillIcons[skill]}`;
+                    } else {
+                        element.className = 'shape text-shape';
+                        element.textContent = skill;
+                    }
+
+                    element.style.top = `${Math.random() * 90}vh`;
+                    element.style.left = `${Math.random() * 90}vw`;
+                    element.style.fontSize = `${Math.random() * 2 + 2.5}rem`;
+                    element.style.animationDuration = `${Math.random() * 15 + 20}s`;
+                    element.style.animationDelay = `${Math.random() * 5}s`;
+
+                    backgroundContainer.appendChild(element);
+                }
+                currentSkillIndex = (currentSkillIndex + 9) % allSkills.length;
+            }
+
+            createShapes();
+            setInterval(createShapes, 8000);
+        });
+
+        function renderResume(lang) {
+            const resumeData = translations[lang];
+            const sidebarCard = document.getElementById('sidebar-card');
+            const mainContent = document.querySelector('main');
+
+            const { personalInfo, contact, skills, education, languages, sections: sidebarSections } = resumeData.sidebar;
+            sidebarCard.innerHTML = `
+                <div class="profile-image-container mx-auto mb-6 w-36 h-36 rounded-full overflow-hidden ring-4 ring-[var(--text-accent)] ring-opacity-50">
+                    <img src="${personalInfo.imageUrl}" alt="${personalInfo.name}" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/144x144/374151/f9fafb?text=AZ';">
+                </div>
+                <h1 class="text-3xl font-bold text-center" style="color: var(--text-accent);">${personalInfo.name}</h1>
+                <p class="text-center mt-2" style="color: var(--text-secondary);">${personalInfo.title}</p>
+                <div class="sidebar-section mt-8 pt-6 border-t" style="border-color: var(--border-color);">
+                    <h3 class="font-semibold mb-4 text-lg">${sidebarSections.contact}</h3>
+                    <div class="space-y-4 text-sm">
+                        <p><i class="fas fa-map-marker-alt fa-fw w-6 text-center mr-2" style="color: var(--text-accent);"></i>${contact.location}</p>
+                        <p class="flex items-start"><i class="fas fa-envelope fa-fw w-6 text-center mr-2 mt-1" style="color: var(--text-accent);"></i><a href="mailto:${contact.email}" class="contact-link">${contact.email}</a></p>
+                        <p><i class="fas fa-phone fa-fw w-6 text-center mr-2" style="color: var(--text-accent);"></i><a href="tel:${contact.phone}" class="contact-link">${contact.phone}</a></p>
+                        <p class="flex items-start"><i class="fab fa-linkedin fa-fw w-6 text-center mr-2 mt-1" style="color: var(--text-accent);"></i><a href="${contact.linkedin}" target="_blank" class="contact-link">amir-hosein-zamani</a></p>
+                        <p class="flex items-start"><i class="fab fa-github fa-fw w-6 text-center mr-2 mt-1" style="color: var(--text-accent);"></i><a href="${contact.githubUrl}" target="_blank" class="contact-link">${contact.githubUrl.replace('https://', '')}</a></p>
+                        <p class="flex items-start"><i class="fab fa-telegram fa-fw w-6 text-center mr-2 mt-1" style="color: var(--text-accent);"></i><a href="${contact.telegram}" target="_blank" class="contact-link">${contact.telegram.replace('https://t.me/', '@')}</a></p>
+                    </div>
+                </div>
+                <div class="sidebar-section mt-8 pt-6 border-t" style="border-color: var(--border-color);">
+                    <h3 class="font-semibold mb-4 text-lg">${sidebarSections.skills}</h3>
+                    <div class="space-y-4 text-sm">
+                        ${skills.map(skillCategory => `<div><h4 class="font-bold mb-2">${skillCategory.category}</h4><div class="flex flex-wrap gap-2">${skillCategory.technologies.map(tech => `<span class="skill-tag text-xs px-2 py-1 rounded-full">${tech}</span>`).join('')}</div></div>`).join('')}
+                    </div>
+                </div>
+                <div class="sidebar-section mt-8 pt-6 border-t" style="border-color: var(--border-color);">
+                    <h3 class="font-semibold mb-4 text-lg">${sidebarSections.education}</h3>
+                    <p class="font-bold text-sm">${education.degree}</p>
+                    <p class="text-sm" style="color: var(--text-secondary);">${education.university}</p>
+                    <p class="text-xs mt-1" style="color: var(--text-secondary);">${education.years}</p>
+                </div>
+                <div class="sidebar-section mt-8 pt-6 border-t" style="border-color: var(--border-color);">
+                    <h3 class="font-semibold mb-4 text-lg">${sidebarSections.languages}</h3>
+                    ${languages.map(lang => `<p class="text-sm"><strong class="font-medium">${lang.name}:</strong> ${lang.proficiency}</p>`).join('')}
+                </div>
+            `;
+
+            const { summary, experience, projects, courses, sections: mainSections } = resumeData.main;
+            mainContent.innerHTML = `
+                <section class="collapsible-section open">
+                    <h2 class="text-2xl font-semibold mb-6 section-title cursor-pointer flex justify-between items-center">
+                        <span><i class="fas fa-user-tie mr-3"></i>${mainSections.summary}</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </h2>
+                    <div class="collapsible-content">
+                        <div class="resume-card p-8 mt-6"><p class="leading-relaxed text-lg" style="color: var(--text-secondary);">${summary}</p></div>
+                    </div>
+                </section>
+
+                <section class="collapsible-section open">
+                    <h2 class="text-2xl font-semibold mb-6 section-title cursor-pointer flex justify-between items-center">
+                        <span><i class="fas fa-briefcase mr-3"></i>${mainSections.experience}</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </h2>
+                    <div class="collapsible-content">
+                        <div class="experience-wrapper space-y-8 mt-6">
+                            ${experience.map(job => `
+                                <div class="resume-card p-8">
+                                    <div class="flex flex-col sm:flex-row justify-between items-start">
+                                        <div>
+                                            <h3 class="text-xl font-bold">${job.title}</h3>
+                                            <p class="font-medium" style="color: var(--text-secondary);">${job.company}</p>
+                                        </div>
+                                        <p class="text-md whitespace-nowrap mt-2 sm:mt-0" style="color: var(--text-secondary);">${job.period}</p>
+                                    </div>
+                                    ${job.description && job.description.length > 0 ? `<ul class="mt-4 list-disc list-inside space-y-2" style="color: var(--text-secondary);">${job.description.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+                                    ${job.tags && job.tags.length > 0 ? `
+                                        <div class="mt-4 flex flex-wrap gap-2">
+                                            ${job.tags.map(tag => `<span class="skill-tag text-xs px-2 py-1 rounded-full">${tag}</span>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <section class="collapsible-section open">
+                    <h2 class="text-2xl font-semibold mb-6 section-title cursor-pointer flex justify-between items-center">
+                        <span><i class="fas fa-project-diagram mr-3"></i>${mainSections.projects}</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </h2>
+                    <div class="collapsible-content">
+                        <div class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                            ${projects.map(project => `
+                                <div class="resume-card p-6 flex flex-col">
+                                    <div class="flex-grow">
+                                        <h3 class="text-lg font-bold">${project.name}</h3>
+                                        <p class="mt-2 text-sm" style="color: var(--text-secondary);">${project.description}</p>
+                                    </div>
+                                    <div class="mt-4 flex justify-between items-center">
+                                        <div>${project.tags.map(tag => `<span class="skill-tag text-xs px-2 py-1 rounded-full">${tag}</span>`).join(' ')}</div>
+                                        <a href="${project.url}" class="contact-link text-sm" target="_blank">${project.urlText} <i class="${project.icon} ml-1"></i></a>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <section class="collapsible-section open">
+                    <h2 class="text-2xl font-semibold mb-6 section-title cursor-pointer flex justify-between items-center">
+                        <span><i class="fas fa-certificate mr-3"></i>${mainSections.courses}</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </h2>
+                    <div class="collapsible-content">
+                        <div class="resume-card p-8 mt-6">
+                            <ul class="list-disc list-inside space-y-2" style="color: var(--text-secondary);">
+                                ${courses.map(course => `<li>${course}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            const sections = mainContent.querySelectorAll('.collapsible-section');
+            sections.forEach(section => {
+                const title = section.querySelector('.section-title');
+                const contentWrapper = section.querySelector('.collapsible-content');
+
+                if (section.classList.contains('open')) {
+                    requestAnimationFrame(() => {
+                        contentWrapper.style.maxHeight = contentWrapper.scrollHeight + "px";
+                    });
+                }
+
+                title.addEventListener('click', () => {
+                    section.classList.toggle('open');
+                    if (section.classList.contains('open')) {
+                        contentWrapper.style.maxHeight = contentWrapper.scrollHeight + "px";
+                    } else {
+                        contentWrapper.style.maxHeight = "0px";
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

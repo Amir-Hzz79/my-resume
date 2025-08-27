@@ -1,0 +1,183 @@
+:root {
+    --bg-primary: #f3f4f6;
+    --bg-secondary: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-accent: #059669;
+    --border-color: #d1d5db;
+    --shadow-color: rgba(17, 12, 46, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.65);
+    --card-border: rgba(255, 255, 255, 0.5);
+    --blur-intensity: 10px;
+}
+
+html.dark {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --text-accent: #34d399;
+    --border-color: #374151;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --card-bg: rgba(31, 41, 55, 0.55);
+    --card-border: rgba(55, 65, 81, 0.7);
+    --blur-intensity: 12px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+html[lang="fa"] body {
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.resume-card {
+    background-color: var(--card-bg);
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+    backdrop-filter: blur(var(--blur-intensity));
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px -1px var(--shadow-color), 0 2.5px 5px -1px var(--shadow-color);
+}
+
+.section-title {
+    border-bottom-width: 2px;
+    border-color: var(--border-color);
+    padding-bottom: 0.75rem;
+    color: var(--text-accent);
+}
+
+.contact-link {
+    transition: color 0.3s;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    color: var(--text-accent);
+}
+
+.skill-tag {
+    background-color: var(--bg-primary);
+    color: var(--text-accent);
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--text-accent);
+    color: var(--bg-secondary);
+}
+
+.action-button {
+    background-color: var(--card-bg);
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+    backdrop-filter: blur(var(--blur-intensity));
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 9999px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.action-button:hover {
+    color: var(--text-accent);
+    border-color: var(--text-accent);
+    transform: scale(1.03);
+}
+
+html[lang="fa"] .mr-2 {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+html[lang="fa"] .mr-3 {
+    margin-left: 0.75rem;
+    margin-right: 0;
+}
+
+html[lang="fa"] .ml-1 {
+    margin-right: 0.25rem;
+    margin-left: 0;
+}
+
+html[lang="fa"] .list-disc {
+    padding-right: 2rem;
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.collapsible-section.open .collapsible-content {
+    max-height: 2000px;
+}
+
+.collapsible-section .section-title .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.collapsible-section.open .section-title .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    color: var(--text-accent);
+    opacity: 0;
+    animation-name: float;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.shape.text-shape {
+    font-weight: 700;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(5vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    15%,
+    85% {
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+    }
+}
